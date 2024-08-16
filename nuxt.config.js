@@ -1,4 +1,5 @@
 export default {
+  // Nuxt.js application configuration
   head: {
     title: 'NEFA',
     htmlAttrs: {
@@ -18,11 +19,23 @@ export default {
       },
     ],
   },
+  
+  // Global CSS files
   css: ['@/assets/css/main.css', 'aos/dist/aos.css'],
+  
+  // Plugins to load before mounting the app
   plugins: ['~/plugins/smooth-scroll.js', '~/plugins/mdi.js'],
+  
+  // Auto import components
   components: true,
+  
+  // Build modules for development
   buildModules: ['@nuxtjs/eslint-module', '@nuxt/postcss8'],
+  
+  // Nuxt.js modules
   modules: [],
+  
+  // Build configuration
   build: {
     postcss: {
       plugins: {
@@ -31,7 +44,10 @@ export default {
       },
     },
   },
-  /**
-  buildDir: 'nuxt-dist',
-   */
+  
+  // Target should be 'static' for static site generation
+  target: 'static',
+  
+  // Custom build directory (if needed, uncomment if using custom build dir)
+  // buildDir: 'nuxt-dist',
 }
