@@ -21,10 +21,6 @@ export default {
     ],
   },
 
-  router: {
-    base: '/nefa/'
-  },
-
   // Global CSS files
   css: ['@/assets/css/main.css', 'aos/dist/aos.css'],
   

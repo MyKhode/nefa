@@ -39,7 +39,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           artifact_name: 'nuxt-static'
-          path: .nuxt/dist # Adjust this if your build output is in a different directory
+          path: .nuxt # Adjust this if your build output is in a different directory
 
   deploy:
     needs: build
