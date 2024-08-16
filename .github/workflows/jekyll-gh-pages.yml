@@ -20,7 +20,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '22.6.0'
+          node-version: '18.x'
 
       - name: Install dependencies
         run: yarn install
@@ -38,8 +38,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          artifact_name: 'nuxt-static'
-          path: .nuxt # Adjust this if your build output is in a different directory
+          name: 'nuxt-static'  # Use 'name' instead of 'artifact_name'
+          path: .nuxt/dist  # Ensure this is the correct path to your build output
 
   deploy:
     needs: build
@@ -48,5 +48,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         with:
-          branch: gh-pages # Ensure this is the correct branch for GitHub Pages deployment
+          branch: main # Ensure this is the correct branch for GitHub Pages deployment
           folder: nuxt-static # This should match the artifact_name used in the upload step
