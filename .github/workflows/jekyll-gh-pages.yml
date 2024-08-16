@@ -1,10 +1,11 @@
+
 name: Build and Deploy
 
 on:
   push:
     branches:
       - main
-      
+
 permissions:
   id-token: write
   pages: write
@@ -38,7 +39,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           artifact_name: 'nuxt-static'
-          path: .nuxt/dist # Ensure this is the correct path for your build output
+          path: .nuxt/dist # Adjust this if your build output is in a different directory
 
   deploy:
     needs: build
@@ -47,5 +48,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         with:
-          branch: gh-pages # Specify the branch where the static files will be deployed
-          folder: .nuxt/dist # Ensure this matches the path used in the previous step
+          branch: gh-pages # Ensure this is the correct branch for GitHub Pages deployment
+          folder: nuxt-static # This should match the artifact_name used in the upload step
