@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '18.x'
 
       - name: Install dependencies
         run: yarn install
@@ -37,6 +37,8 @@ jobs:
           name: 'nuxt-static'
           path: dist  # Assuming the generated static files are in the 'dist' directory
 
+
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -45,3 +47,4 @@ jobs:
         uses: actions/deploy-pages@v4
         with:
           artifact_name: 'nuxt-static'  # This should match the name used in the upload step
+

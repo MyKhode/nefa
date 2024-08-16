@@ -51,4 +51,9 @@ export default {
   
   // Custom build directory (if needed, uncomment if using custom build dir)
   // buildDir: 'nuxt-dist',
+  
+  // Specify the router base if your site is hosted in a subdirectory
+  router: {
+    base: '/nefa/', // Adjust this if necessary
+  },
 }
