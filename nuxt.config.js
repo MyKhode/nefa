@@ -1,6 +1,5 @@
 export default {
   // Nuxt.js application configuration
-  
   head: {
     title: 'NEFA',
     htmlAttrs: {
@@ -49,6 +48,11 @@ export default {
   // Target should be 'static' for static site generation
   target: 'static',
   
-  // Custom build directory (if needed, uncomment if using custom build dir)
+  // Router base for GitHub Pages (use the repo name)
+  router: {
+    base: '/nefa/',
+  },
+
+  // Custom build directory (if needed)
   // buildDir: 'nuxt-dist',
 }

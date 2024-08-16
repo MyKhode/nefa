@@ -1,4 +1,3 @@
-
 name: Build and Deploy
 
 on:
@@ -38,7 +37,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          name: 'nuxt-static'  # Use 'name' instead of 'artifact_name'
+          name: 'nuxt-static'
           path: .nuxt/dist  # Ensure this is the correct path to your build output
 
   deploy:
@@ -48,5 +47,4 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         with:
-          branch: main # Ensure this is the correct branch for GitHub Pages deployment
-          folder: nuxt-static # This should match the artifact_name used in the upload step
+          artifact_name: 'nuxt-static'  # This should match the name used in the upload step
