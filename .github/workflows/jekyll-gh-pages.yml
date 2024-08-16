@@ -24,21 +24,18 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: Build with Nuxt
+      - name: Build and Generate static files
         env:
           NODE_OPTIONS: --openssl-legacy-provider
-        run: yarn build
-
-      - name: Generate static files
-        env:
-          NODE_OPTIONS: --openssl-legacy-provider
-        run: yarn generate
+        run: |
+          yarn build
+          yarn generate
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           name: 'nuxt-static'
-          path: .nuxt/dist  # Ensure this is the correct path to your build output
+          path: dist  # Assuming the generated static files are in the 'dist' directory
 
   deploy:
     needs: build
