@@ -23,7 +23,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '22'
+          node-version: '18'
       - name: Install dependencies
         run: |
           yarn install
@@ -32,8 +32,13 @@ jobs:
           NODE_OPTIONS: --openssl-legacy-provider
         run: |
           yarn build
+      - name: Generate static files
+        run: |
+          yarn generate
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist  # Update this to your actual build output directory
 
   deploy:
     environment:
