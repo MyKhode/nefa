@@ -15,7 +15,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x' # Specify a stable Node.js version (updated to 18.x for compatibility)
+          node-version: '22.6.0' # Specify a stable Node.js version
 
       - name: Install dependencies
         run: yarn install
@@ -30,10 +30,10 @@ jobs:
           NODE_OPTIONS: --openssl-legacy-provider
         run: yarn generate
 
-      - name: Upload build artifacts
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist # Ensure this is the correct path for your build output (usually 'dist' for static files)
+          path: .nuxt # Ensure this is the correct path for your build output
 
   deploy:
     needs: build
@@ -42,4 +42,4 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         with:
-          path: dist # Ensure this is the correct path for your static files
+          token: ${{ secrets.MYTOKEN }} # Use the provided GitHub token
