@@ -3,7 +3,7 @@
   command = "yarn build && yarn generate"
 
 [build.environment]
-  NODE_VERSION = "16.x"  # Changed to a valid Node.js version
+  NODE_VERSION = "16.14.0"  # Updated to a specific, available Node.js version
   NODE_OPTIONS = "--openssl-legacy-provider"
 
 [context.production]
