@@ -1,0 +1,22 @@
+[build]
+  publish = "dist"
+  command = "yarn build && yarn generate"
+
+[build.environment]
+  NODE_VERSION = "18.x"
+  NODE_OPTIONS = "--openssl-legacy-provider"
+
+[context.production]
+  command = "yarn build && yarn generate"
+  
+[context.branch-deploy]
+  command = "yarn build && yarn generate"
+
+[context.deploy-preview]
+  command = "yarn build && yarn generate"
+
+[[plugins]]
+  package = "netlify-plugin-hugo-cache-resources"
+
+  [plugins.inputs]
+    debug = true
