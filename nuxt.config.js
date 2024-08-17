@@ -54,6 +54,6 @@ export default {
   
   // Specify the router base if your site is hosted in a subdirectory
   router: {
-    base: '/nefa/', // Adjust this if necessary
+    base: '/', // Adjust this if necessary
   },
 }

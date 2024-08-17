@@ -5,17 +5,17 @@
       <BaseSection>
         <div class="col-span-12 lg:col-span-6 mt-12 xl:mt-10 space-y-4 sm:space-y-6 px-6 text-center sm:text-left">
           <span data-aos="fade-right" data-aos-once="true" class="text-base text-gradient font-semibold uppercase"
-            >Sign Up Today</span
+            >© → Let's begin with </span
           >
           <h1
             data-aos="fade-right"
-            data-aos-once="true"
+            data-aos-once="true" 
             class="text-[2.5rem] sm:text-5xl xl:text-6xl font-bold leading-tight capitalize sm:pr-8 xl:pr-10"
           >
-            The World's <span class="text-header-gradient">Fastest Growing</span> Crypto Web App
+            The World's <span class="text-header-gradient">Fastest Growing</span> Community 🎮
           </h1>
           <p data-aos="fade-down" data-aos-once="true" data-aos-delay="300" class="paragraph hidden sm:block">
-            Buy and sell 200+ cryptocurrencies with 20+ flat currencies using bank transfers or your credit/debit card.
+          Learn, create, and share your game projects with like-minded developers. Collaborate, code, and conquer game dev challenges together.
           </p>
           <div
             data-aos="fade-up"
@@ -31,7 +31,7 @@
             <BaseButton
               class="max-w-full px-6 py-4 bg-inherit text-gradient border border-[#0c66ee] flex items-center justify-center"
             >
-              <span>Download App</span>
+              <span>Download Project</span>
               <ChevronDownIcon :size="20" class="mt-1 text-[#0c66ee]" />
             </BaseButton>
           </div>
@@ -41,7 +41,7 @@
             <img
               data-aos="fade-up"
               data-aos-once="true"
-              :src="require('~/assets/img/hero-image.webp')"
+              :src="require('~/assets/img/giphy.gif')"
               class="-mt-4"
               alt=""
             />
